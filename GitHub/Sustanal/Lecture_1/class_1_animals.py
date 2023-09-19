@@ -2,7 +2,7 @@ import pandas as pd
 
 #%% data input
 shelter_count = pd.read_csv('shelter_count.csv', skiprows = 4,
-                             header = [0,1], index_col = [0,1])
+                            header = [0,1], index_col = [0,1])
 print(shelter_count.describe())
 
 #%% data exploration
