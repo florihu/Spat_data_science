@@ -1,0 +1,23 @@
+Data source: https://www.shelteranimalscount.org/data-dashboards,,,,,,,,,,
+Country: United States,,,,,,,,,,
+Year selected: 2020,,,,,,,,,,
+,,,,,,,,,,
+,,Dogs,Dogs,Dogs,Dogs,Cats,Cats,Cats,Cats,All
+,,Adult,Up to 5 Months,Age Unknown,Total,Adult,Up to 5 Months,Age Unknown,Total,Grand Total
+Gross Intakes,Stray/At Large,503678,106983,91448,702109,298557,409968,124397,832922,1535031
+Gross Intakes,Relinquished by Owner,266529,90069,30259,386857,209671,163299,30873,403843,790700
+Gross Intakes,Owner-Intended Euthanasia (intake),42534,878,5367,48779,17645,1319,2652,21616,70395
+Gross Intakes,Transferred in from Agency,200908,124864,25895,351667,103978,149373,16359,269710,621377
+Gross Intakes,Other Intakes,90077,29468,15040,134585,56574,47863,19001,123438,258023
+Gross Intakes,Total,1103726,352262,168009,1623997,686425,771822,193282,1651529,3275526
+Gross Live Outcomes,Adoption,587402,220212,63682,871296,457767,530580,63401,1051748,1923044
+Gross Live Outcomes,Returned to Owner,234319,9434,40445,284198,31863,4941,5632,42436,326634
+Gross Live Outcomes,Transferred to another Agency,189306,96136,35631,321073,81103,104063,35383,220549,541622
+Gross Live Outcomes,Returned To Field,1980,207,1515,3702,72011,13577,26426,112014,115716
+Gross Live Outcomes,Other Live Outcome,12764,3627,2302,18693,16370,8073,6499,30942,49635
+Gross Live Outcomes,Total,1025771,329616,143575,1498962,659114,661234,137341,1457689,2956651
+Other Outcomes,Died in Care,5300,6120,1888,13308,7859,28740,5968,42567,55875
+Other Outcomes,Lost in Care,3199,508,407,4114,2566,1214,958,4738,8852
+Other Outcomes,Shelter Euthanasia,66355,6404,13560,86319,62915,40495,34365,137775,224094
+Other Outcomes,Owner-Intended Euthanasia (outcome),39634,495,5223,45352,16292,883,3004,20179,65531
+Other Outcomes,Total,114488,13527,21078,149093,89632,71332,44295,205259,354352
