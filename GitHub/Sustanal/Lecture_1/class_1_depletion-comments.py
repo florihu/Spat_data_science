@@ -1,12 +1,10 @@
-#%% libraries and settings
-
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from itertools import product
 
-# target yearly oil extraction
+
 
 def logistic_function(K, r, x_peak, x):
     '''
