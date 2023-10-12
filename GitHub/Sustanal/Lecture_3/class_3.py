@@ -19,38 +19,45 @@ def distribution(kind,loc,scale,size):
         return  np.random.normal(loc=loc, scale=scale, size=size)
     elif kind == 'log_normal':
         return  np.random.lognormal(mean=loc, sigma=scale, size=size)
+import numpy as np
+
 def calculate(d_car, d_train, d_air, switch='deterministic'):
 
-   if switch == 'deterministic':
-       data = pd.DataFrame()
-       data['Emission_car'] = 10 * d_car
-       data['Emission_train'] = 2.5 * d_train
-       data['Emission_airplain'] = 200 * d_air
+    if switch == 'deterministic':
+        emission_car = np.full(1000, 10 * d_car)
+        emission_train = np.full(1000, 2.5 * d_train)
+        emission_airplain = np.full(1000, 200 * d_air)
+        data = pd.DataFrame({'Emission_car': emission_car, 'Emission_train': emission_train, 'Emission_airplain': emission_airplain})
 
-       return data /1000
+        return data / 1000
 
-   elif switch == 'random':
-        data = pd.DataFrame()
-        for type in ['normal', 'log_normal']:
-            data[('Emission_car', type)] = distribution(kind=type, loc=55/2, scale=45 / 4, size=1000) * d_car
-            data[('Emission_train', type)] = distribution(kind =type, loc=11/ 2, scale=9 / 4, size=1000) * d_train
-            data[('Emission_airplain', type)] = distribution(kind=type, loc=(355+199) / 2, scale=(355-199) / 4, size=1000) * d_air
+    elif switch == 'random':
+        emission_car_normal = distribution(kind='normal', loc=55/2, scale=45 / 4, size=1000) * d_car
+        emission_train_normal = distribution(kind='normal', loc=11/ 2, scale=9 / 4, size=1000) * d_train
+        emission_airplain_normal = distribution(kind='normal', loc=(355+199) / 2, scale=(355-199) / 4, size=1000) * d_air
+        emission_car_lognormal = distribution(kind='lognormal', loc=55/2, scale=45 / 4, size=1000) * d_car
+        emission_train_lognormal = distribution(kind='lognormal', loc=11/ 2, scale=9 / 4, size=1000) * d_train
+        emission_airplain_lognormal = distribution(kind='lognormal', loc=(355+199) / 2, scale=(355-199) / 4, size=1000) * d_air
+        data = pd.DataFrame({'Emission_car_normal': emission_car_normal, 'Emission_train_normal': emission_train_normal, 'Emission_airplain_normal': emission_airplain_normal, 'Emission_car_lognormal': emission_car_lognormal, 'Emission_train_lognormal': emission_train_lognormal, 'Emission_airplain_lognormal': emission_airplain_lognormal})
 
-        return data /1000
+        return data / 1000
+    else:
 
-
-   else:
         raise ValueError('daterministic or random')
 
 
+
 if __name__ == "__main__":
+
     d_car = 200
     d_train = 10000
     d_airplane = 1000
 
     plt.figure()
-    sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_car', 'normal')], kde=True, log_scale=False)
-    sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_train', 'normal')], kde=True, log_scale=False)
+    sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_car', 'normal')], kde=True,
+                 log_scale=False)
+    sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_train', 'normal')], kde=True,
+                 log_scale=False)
     sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_airplain', 'normal')], kde=True,
                  log_scale=False)
     plt.savefig('Comparison_normal_distrib.png')
@@ -64,4 +71,6 @@ if __name__ == "__main__":
     sns.histplot(calculate(d_car, d_train, d_airplane, switch='random')[('Emission_airplain', 'log_normal')], kde=True,
                  log_scale=True)
     plt.show()
+
+
 

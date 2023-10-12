@@ -1,5 +1,9 @@
 
+from scipy.stats import norm
+import matplotlib.pyplot as plt
 
-list = range(10)
 
-print(list)
+
+
+
+
