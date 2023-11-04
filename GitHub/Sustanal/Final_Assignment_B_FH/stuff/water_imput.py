@@ -89,6 +89,8 @@ class Process_data():
         thres1 = np.percentile(ser, self.thres1)
         thres2 = np.percentile(ser, self.thres2)
 
+        print('Threshold1:'+f"{thres1}"+' Threshold2:'+f"{thres2}")
+
         dict_ = {key for key in data.columns}
 
         dict_bar = {}
@@ -110,7 +112,7 @@ class Process_data():
         result_df_percentage.T.plot(kind='bar', stacked=True)
         plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
         plt.savefig('stuff\porportion_classes_UI.jpeg')
-        plt.close()
+        plt.show()
 
 
 

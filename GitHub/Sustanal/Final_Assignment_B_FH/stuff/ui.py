@@ -19,14 +19,14 @@ class ThresholdSelector(QWidget):
         layout = QVBoxLayout()
         # image (shown usually via a QLabel)
 
+        #
         self.label = QLabel(self)
         self.pixmap = QtGui.QPixmap('stuff\porportion_classes_UI.jpeg')
-        # Scale the image to the desired width and height
+        #Scale the image to the desired width and height
         scaled_pixmap = self.pixmap.scaled(640, 480, aspectRatioMode=Qt.KeepAspectRatio)
         self.label.setPixmap(scaled_pixmap)
         self.label.setAlignment(Qt.AlignCenter)
-        self.label.update()
-
+        #self.label.update()
 
         self.slider1 = QSlider()
         self.slider1.setMinimum(0)
@@ -45,6 +45,7 @@ class ThresholdSelector(QWidget):
 
         self.ok_button = QPushButton("OK")
         self.ok_button.clicked.connect(self.close)
+
 
         layout.addWidget(self.slider1)
         layout.addWidget(self.label1)
@@ -74,6 +75,7 @@ class ThresholdSelector(QWidget):
             self.label2.setText(f"Threshold 2: {value2}")
             self.sliderValueChanged.emit(value1, value2)
             iteration.clustering(self.prev_value1, self.prev_value2)
+            self.updateLabel()
 
 
 def start_app():

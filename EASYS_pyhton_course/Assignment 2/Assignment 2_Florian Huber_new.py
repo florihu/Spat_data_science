@@ -168,6 +168,7 @@ pool_solution = []
 for i in range(len(years_reduction_start)):
     	pool_solution.append(odeint(model,pool_initial,t,args=(pool_fossil_init,beta,k,switch_intervention,reduction_fossilfuels[0],reduction_landusechange[0],switch_reduction, years_reduction_start[i],)))
 
+print ()
 
 years = [i for i in range(1900,2100)]
 years_all = [i for i in range(1750,2100)]
