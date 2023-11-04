@@ -7,32 +7,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.impute import KNNImputer
 import numpy as np
 import matplotlib.pyplot as plt
-
+from .util import *
 
 
 data = wb.data.DataFrame(['ER.H2O.FWIN.ZS','NV.IND.TOTL.ZS'], time=[2020])
 
-def region_cleaner(data):
-    economies = wb.economy.DataFrame()
-    aggregates_id = economies[economies['aggregate'] == True]
-    data_clean = data.loc[data.index.difference(aggregates_id.index)]
-
-    data_clean_name = data_clean.join(economies['name'], on = data_clean.index, how = 'inner')
-    data_clean_name.set_index('name', append=True, inplace =True)
-
-    data_clean_name =data_clean_name.drop(columns='key_0')
-
-    return data_clean_name
-
-def nan_checker(data):
-    return data.isna().sum()
-
-def set_split(data_not_clean):
-    data = region_cleaner(data_not_clean)
-    data_new = data[~data['NV.IND.TOTL.ZS'].isna() & ~data['ER.H2O.FWIN.ZS'].isna()]
-    #data_new=  data[~data['NV.IND.TOTL.ZS'].isna() & data['ER.H2O.FWIN.ZS'].isna()]
-
-    return data_new
 
 class Process_data():
     def __init__(self):
@@ -41,7 +20,7 @@ class Process_data():
         self.thres2 = None
 
 
-    def imput_calc(self):
+    def imput_calc_ui(self):
 
         data = region_cleaner(self.data)
 
@@ -111,9 +90,9 @@ class Process_data():
 
         result_df_percentage.T.plot(kind='bar', stacked=True)
         plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
-        plt.savefig('stuff\porportion_classes_UI.jpeg')
+        folder_checker('Graphs')
+        plt.savefig('Graphs\porportion_classes_UI.jpeg')
         plt.show()
-
 
 
 iteration = Process_data()

@@ -11,26 +11,53 @@ from sklearn.impute import KNNImputer
 import numpy as np
 import os
 
-def region_cleaner(data):
+wb_economies = wb.economy.DataFrame()
+
+# def region_cleaner(data):
+#     '''
+#     * removes non country aggregates
+#     * creates multi index
+#     * drops keys
+#
+#     :param data: Raw data
+#     :return: clean data
+#     '''
+#
+#     economies = wb.economy.DataFrame()
+#     aggregates_id = economies[economies['aggregate'] == True]
+#     data_clean = data.loc[data.index.difference(aggregates_id.index)]
+#
+#     data_clean_name = data_clean.join(economies['name'], on = data_clean.index, how = 'inner')
+#     data_clean_name.set_index('name', append=True, inplace =True)
+#
+#     data_clean_name =data_clean_name.drop(columns='key_0')
+#
+#     return data_clean_name
+def region_cleaner(data, economies=wb_economies):
     '''
-    * removes non country aggregates
-    * creates multi index
-    * drops keys
+    Cleans the data by:
+    * Removing non-country aggregates
+    * Creating a multi-index
+    * Dropping unnecessary keys
 
     :param data: Raw data
-    :return: clean data
+    :param economies: DataFrame containing economy information
+    :return: Clean data
     '''
 
-    economies = wb.economy.DataFrame()
-    aggregates_id = economies[economies['aggregate'] == True]
-    data_clean = data.loc[data.index.difference(aggregates_id.index)]
+    # Filter out non-country aggregates
+    data_clean = data[data.index.isin(economies[economies['aggregate'] == False].index)]
 
-    data_clean_name = data_clean.join(economies['name'], on = data_clean.index, how = 'inner')
-    data_clean_name.set_index('name', append=True, inplace =True)
+    # Join with economy names and set a multi-index
+    data_clean_name = data_clean.join(economies[['name']], on=data_clean.index, how='inner')
+    data_clean_name.set_index(['name', data_clean_name.index], inplace=True)
 
-    data_clean_name =data_clean_name.drop(columns='key_0')
+    # Drop the unnecessary key_0 column
+    data_clean_name.drop(columns='key_0', inplace=True)
 
     return data_clean_name
+
+
 
 def nan_checker(data):
     print('TASK 4c NaN values per indicator\n', data.isna().sum(), '\n')

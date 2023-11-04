@@ -9,6 +9,7 @@ if __name__ == "__main__":
 
     data = wb.data.DataFrame(['ER.H2O.FWIN.ZS', 'NV.IND.TOTL.ZS'], time=[2020])
 
+
     data.columns = ['Water share industry (%)', 'GDP share industry (%)']
 
 
