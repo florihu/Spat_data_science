@@ -20,7 +20,7 @@ class Process_data():
         self.thres2 = None
 
 
-    def imput_calc_ui(self):
+    def imput_calc(self):
 
         data = region_cleaner(self.data)
 
@@ -43,14 +43,13 @@ class Process_data():
 
         return data
 
-    def plot_output(self):
-        result_df = self.clustering()  # Fixed method call
+    def plot_output(self, value1, value2):
+        result_df = self.clustering(value1,value2)  # Fixed method call
         result_df_percentage = result_df.div(result_df.sum(axis=0), axis=1) * 100
-
-        result_df_percentage.T.plot(kind='bar', stacked=True)
-        plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
-        plt.savefig('porportion_classes_UI.jpeg')
-        plt.show()
+        return result_df_percentage.T.plot(kind='bar', stacked=True)
+        #plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
+        #plt.savefig('Graphs\porportion_classes_UI.jpeg')
+        #plt.show()
 
     def clustering(self, value1, value2):
 
@@ -68,7 +67,7 @@ class Process_data():
         thres1 = np.percentile(ser, self.thres1)
         thres2 = np.percentile(ser, self.thres2)
 
-        print('Threshold1:'+f"{thres1}"+' Threshold2:'+f"{thres2}")
+        #print('Threshold1:'+f"{self.thres1}"+' Threshold2:'+f"{self.thres2}")
 
         dict_ = {key for key in data.columns}
 
@@ -86,13 +85,15 @@ class Process_data():
         df = pd.DataFrame.from_dict(dict_bar)
         df.index = ['high', 'medium', 'low']
 
-        result_df_percentage = df.div(df.sum(axis=0), axis=1) * 100
+        #result_df_percentage = df.div(df.sum(axis=0), axis=1) * 100
 
-        result_df_percentage.T.plot(kind='bar', stacked=True)
-        plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
-        folder_checker('Graphs')
-        plt.savefig('Graphs\porportion_classes_UI.jpeg')
-        plt.show()
+        #result_df_percentage.T.plot(kind='bar', stacked=True)
+        #plt.ylabel('Percentage (%)' + f" {self.thres1, self.thres2}")  # Fixed syntax
+        #folder_checker('Graphs')
+        #plt.savefig('Graphs\porportion_classes_UI.jpeg')
+        #plt.show()
+
+        return df
 
 
 iteration = Process_data()
