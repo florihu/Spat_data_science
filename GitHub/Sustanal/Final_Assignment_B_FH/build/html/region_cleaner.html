@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="EN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaning data &mdash; Sust_anal_B_FH 11/23 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=957ed901"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Sust_anal_B_FH
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Cleaning data</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sust_anal_B_FH</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Cleaning data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/region_cleaner.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cleaning-data">
+<h1>Cleaning data<a class="headerlink" href="#cleaning-data" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">region_cleaner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data,</span> <span class="pre">economies=</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">name</span>&#160; <span class="pre">aggregate</span>&#160; <span class="pre">longitude</span>&#160; <span class="pre">latitude</span> <span class="pre">region</span> <span class="pre">adminregion</span> <span class="pre">lendingType</span> <span class="pre">incomeLevel</span> <span class="pre">capitalCity</span> <span class="pre">id</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ABW</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Aruba</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160; <span class="pre">-70.0167</span>&#160; <span class="pre">12.51670</span>&#160;&#160;&#160; <span class="pre">LCN</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LNX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">HIC</span>&#160; <span class="pre">Oranjestad</span> <span class="pre">AFE</span>&#160; <span class="pre">Africa</span> <span class="pre">Eastern</span> <span class="pre">and</span> <span class="pre">Southern</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">True</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">NaN</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">NaN</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">AFG</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Afghanistan</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">69.1761</span>&#160; <span class="pre">34.52280</span>&#160;&#160;&#160; <span class="pre">SAS</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SAS</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IDX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LIC</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Kabul</span> <span class="pre">AFW</span>&#160;&#160; <span class="pre">Africa</span> <span class="pre">Western</span> <span class="pre">and</span> <span class="pre">Central</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">True</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">NaN</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">NaN</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">AGO</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Angola</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">13.2420</span>&#160; <span class="pre">-8.81155</span>&#160;&#160;&#160; <span class="pre">SSF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SSA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IBD</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LMC</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">Luanda</span> <span class="pre">..</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">...</span> <span class="pre">XKX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Kosovo</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">20.9260</span>&#160; <span class="pre">42.56500</span>&#160;&#160;&#160; <span class="pre">ECS</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ECA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IDX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">UMC</span>&#160;&#160;&#160; <span class="pre">Pristina</span> <span class="pre">YEM</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Yemen,</span> <span class="pre">Rep.</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">44.2075</span>&#160; <span class="pre">15.35200</span>&#160;&#160;&#160; <span class="pre">MEA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">MNA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IDX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LIC</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">Sana'a</span> <span class="pre">ZAF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">South</span> <span class="pre">Africa</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">28.1871</span> <span class="pre">-25.74600</span>&#160;&#160;&#160; <span class="pre">SSF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SSA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IBD</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">UMC</span>&#160;&#160;&#160; <span class="pre">Pretoria</span> <span class="pre">ZMB</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Zambia</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">28.2937</span> <span class="pre">-15.39820</span>&#160;&#160;&#160; <span class="pre">SSF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SSA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IDX</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LMC</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">Lusaka</span> <span class="pre">ZWE</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Zimbabwe</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">False</span>&#160;&#160;&#160; <span class="pre">31.0672</span> <span class="pre">-17.83120</span>&#160;&#160;&#160; <span class="pre">SSF</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SSA</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">IDB</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LMC</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">Harare</span>&#160; <span class="pre">[266</span> <span class="pre">rows</span> <span class="pre">x</span> <span class="pre">9</span> <span class="pre">columns]</span></em><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – This is the data consumed by the wb. Assumed are two indicators</p></li>
+<li><p><strong>economies</strong> – Economics of wb.economies</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with mutliindex and removed regions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Florian Huber.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
